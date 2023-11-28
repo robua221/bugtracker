@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Bug Tracker</title>
+</head>
+
+<body>
+    <div class="card-container my-5 border-left-0">
+        <div>
+            <span class="title">Bug Tracker</span>
+        </div>
+        <div class="bug-card">
+            <button id="fab" class="fab float-right" data-toggle="modal" data-target="#add-bug-container">ADD
+                BUG</button>
+            <ul id="list" class="list-group mt-3"></ul>
+            <div id="add-bug-container" class="modal add-bug-container" data-backdrop="static">
+                <div class="container">
+                    <div class="col mx-2">
+                        <h5 class="text-primary text-left mt-4">Add Bug</h5>
+                        <div class="form-group">
+                            <label for="new-bug-description">Description:</label>
+                            <input id="new-bug-description" class="form-control" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="new-bug-id">Bug ID:</label>
+                            <input id="new-bug-id" class="form-control" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="new-bug-status">Status:</label>
+                            <select id="new-bug-status" class="form-control">
+                                <option value="Reported">Reported</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Done">Done</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-primary mt-3" onclick="addBug(
+                            document.getElementById('new-bug-description').value,
+                            document.getElementById('new-bug-id').value,
+                            document.getElementById('new-bug-status').value
+                        );">Save</button>
+                        <button type="button" class="btn btn-secondary mt-3" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/getAccount.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
